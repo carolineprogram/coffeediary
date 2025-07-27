@@ -8,10 +8,12 @@ st.write(
 
 
 data = pd.DataFrame({
-    'Naam': ['1', 'Bob', 'Charlie'],
-    'Gekocht': [25, 30, 35],
-    'Favours': [85, 90, 78],
-    'Brew': ['', '', ''],
+    'Naam': ['Brazil Catuai Vermelho - filter roast', 
+                'Brazil Cerrado Peaberry - filter roast', 'Charlie'],
+    'Gekocht': ['Onan', 'Onan', 35],
+    'Flavours': ['Hazelnoot, Melkchocolade, Zoete appel, Basilium', 
+                'Geroosterde hazelnoot, Bosbes, Cacao', 78],
+    'Brew': ['Aeropress', 'Aerpress', ''],
 })
 st.table(data)
     
