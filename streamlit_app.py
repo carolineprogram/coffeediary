@@ -5,7 +5,7 @@ from db import run_query
 
 def get_db_tips():
 #    return run_query("select", "HOWTO", ["onderwerp", "databanktips"], order="id")
-    return run_query("select", "HOWTO", ["ID"], order="id")
+    return run_query("select", "HOWTO", ["id"], order="id")
 
 st.title("☕️Koffie!")
 st.write(
