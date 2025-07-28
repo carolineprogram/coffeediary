@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+from db import run_query
+
 def get_db_tips():
-    return run_query("select", "recepten_Recepten", ["recept_id", "Naam"], order="Naam")
+    return run_query("select", "HOWTO", ["onderwerp", "databanktips"], order="id")
 
 st.title("☕️Koffie!")
 st.write(
@@ -20,10 +22,8 @@ data = pd.DataFrame({
 })
 st.table(data)
 
-
-
-from db import run_query
-
+databanktips = get_db_tips()
+st.table(databanktips)
 
 
     
