@@ -4,8 +4,7 @@ import pandas as pd
 from db import run_query
 
 def get_db_tips():
-#    return run_query("select", "HOWTO", ["onderwerp", "databanktips"], order="id")
-    return run_query("select", "HOWTO", ["id"], order="id")
+    return run_query("select", "HOWTO", ["onderwerp", "databanktips"], order="id")
 
 st.title("☕️Koffie!")
 st.write(
@@ -24,7 +23,7 @@ data = pd.DataFrame({
 st.table(data)
 
 databanktips = get_db_tips()
-st.write(databanktips.data)
+st.table(databanktips.data)
 
 
     
