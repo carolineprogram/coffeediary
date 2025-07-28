@@ -1,16 +1,10 @@
-#This file will handle database connections and queries.
-
 import streamlit as st
-import mysql.connector
 from st_supabase_connection import SupabaseConnection
 
-# Initialize connection.
 def get_connection():
     # op Supabase
     return st.connection("supabase", type=SupabaseConnection)
 
-# Perform query.
-# 
 def run_query(query, table, data=None, where=None, order=None):
     """
        Executes a query on the Supabase database.
