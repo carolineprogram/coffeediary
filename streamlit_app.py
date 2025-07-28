@@ -23,7 +23,7 @@ data = pd.DataFrame({
 st.table(data)
 
 databanktips = get_db_tips()
-st.table(databanktips)
+st.write(databanktips)
 
 
     
