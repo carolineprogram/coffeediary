@@ -11,6 +11,9 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
+get koffie():
+    return run_query("select", "koffiesoort", ["naam"])
+
 
 data = pd.DataFrame({
     'Naam': ['Brazil Catuai Vermelho - filter roast', 
