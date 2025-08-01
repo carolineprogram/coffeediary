@@ -1,4 +1,4 @@
-°import streamlit as st
+import streamlit as st
 import pandas as pd
 
 from db import run_query
