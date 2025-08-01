@@ -33,5 +33,5 @@ databanktips = get_db_tips()
 st.table(databanktips.data)
 
 koffie = get_koffie()
-st.table(koffie.data)
+st.write(koffie.data)
     
