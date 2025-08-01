@@ -1,4 +1,4 @@
-import streamlit as st
+°import streamlit as st
 import pandas as pd
 
 from db import run_query
@@ -12,7 +12,7 @@ st.write(
 )
 
 def get_koffie():
-    return run_query("select", "koffiesoort", ["naam"])
+    return run_query("select", "koffie_soort", ["naam"])
 
 
 data = pd.DataFrame({
