@@ -12,7 +12,19 @@ st.write(
 )
 
 def get_koffie():
-    return run_query("select", "koffie_soort", ["naam"])
+    return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)"])
+
+# Define the SQL query
+"""
+SELECT ks.naam, kw.waargekocht
+FROM koffie_soort as ks
+LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
+"""
+
+# Execute the query
+response = supabase.table('koffie_soort').select("naam, koffie_winkel(waargekocht)").execute()
+
+
 
 
 data = pd.DataFrame({
