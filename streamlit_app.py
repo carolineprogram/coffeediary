@@ -11,7 +11,7 @@ st.write(
     "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
 )
 
-get koffie():
+def get_koffie():
     return run_query("select", "koffiesoort", ["naam"])
 
 
@@ -28,5 +28,6 @@ st.table(data)
 databanktips = get_db_tips()
 st.table(databanktips.data)
 
+st.table(get_koffie())
 
     
