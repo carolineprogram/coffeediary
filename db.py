@@ -40,7 +40,7 @@ def run_query(query, table, data=None, where=None, order=None):
             result = q.execute()
             
         elif query == "joinselect":
-            result = conn.table('koffie_soort').select('naam, koffie_winkel(waardegekocht)').execute()
+            result = conn.table('koffie_soort').select('naam, koffie_winkel(waargekocht)').execute()
             
         elif query == "insert":
             result = q.insert(data).execute()
