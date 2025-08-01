@@ -12,11 +12,10 @@ st.write(
 )
 
 def get_koffie():
-"""
-SELECT ks.naam, kw.waargekocht
-FROM koffie_soort as ks
-LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
-"""
+    #SELECT ks.naam, kw.waargekocht
+    #FROM koffie_soort as ks
+    #LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
+
     return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)"])
 
 
