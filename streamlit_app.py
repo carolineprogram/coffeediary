@@ -28,6 +28,6 @@ st.table(data)
 databanktips = get_db_tips()
 st.table(databanktips.data)
 
-koffie = get_koffie())
+koffie = get_koffie()
 st.write(koffie)
     
