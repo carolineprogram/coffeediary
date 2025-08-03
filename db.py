@@ -40,6 +40,10 @@ def run_query(query, table, data=None, where=None, order=None):
             result = q.execute()
             
         elif query == "joinselect":
+            #SELECT ks.naam, kw.waargekocht, kf.flavour
+            #FROM koffie_soort as ks
+            #LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
+            #LEFT JOIN koffie_soort_flavours kfs ON ks.id = kfs.id_soort LEFT JOIN koffie_flavours kf ON kfs.id_flavour = kf.id
             result = conn.table('koffie_soort').select('naam, koffie_winkel(waargekocht), koffie_soort_flavours!inner(koffie_flavours(flavour))').execute()
             
         elif query == "insert":
