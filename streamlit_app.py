@@ -8,7 +8,7 @@ def get_db_tips():
 
 st.title("☕️Koffie!")
 
-st.page_link('db_tips.py', label="Tips om databank te maken of bevragen?")
+st.page_link('db_tips.py')
 
 def get_koffie():
     #SELECT ks.naam, kw.waargekocht, kf.flavour
