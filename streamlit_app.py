@@ -8,8 +8,6 @@ def get_db_tips():
 
 st.title("☕️Koffie!")
 
-st.page_link('./db_tips.py')
-
 def get_koffie():
     #SELECT ks.naam, kw.waargekocht, kf.flavour
     #FROM koffie_soort as ks
@@ -18,9 +16,6 @@ def get_koffie():
     return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)", "koffie_soort_flavours!inner(koffie_flavours(flavour))"])
 
 
-databanktips = get_db_tips()
-st.table(databanktips.data)
-
 koffie = get_koffie()
 st.table(koffie.data)
-    
+st.write(koffie.data)    
