@@ -19,3 +19,27 @@ def get_koffie():
 koffie = get_koffie()
 st.table(koffie.data)
 st.write(koffie.data)    
+
+processed_data = []
+data_by_id = defaultdict(lambda: {"naam": None, "winkel": None, "flavours": []})
+
+for item in response.data:
+    naam = item["naam"]
+    winkel = item["koffie_winkel"]["waargekocht"] if item["koffie_winkel"] else None
+    flavours = [flavour["koffie_flavours"]["flavour"] for flavour in item["koffie_soort_flavours"]]
+
+    data_by_id[item["id"]]["naam"] = naam
+    data_by_id[item["id"]]["winkel"] = winkel
+    data_by_id[item["id"]]["flavours"].extend(flavours)
+
+# Convert to the desired format
+for id, data in data_by_id.items():
+    processed_data.append({
+        "naam": data["naam"],
+        "winkel": data["winkel"],
+        "flavours": ", ".join(data["flavours"])
+    })
+
+# Print the processed data
+for entry in processed_data:
+    print(entry)
