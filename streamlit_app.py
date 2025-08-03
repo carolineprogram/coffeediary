@@ -37,7 +37,7 @@ for item in koffie.data:
         "winkel": winkel,
         "flavours": ", ".join(flavours)
         })
-    st.write(processed_data)
+    st.table(processed_data)
     #data_by_id[item["id"]]["naam"] = naam
     #data_by_id[item["id"]]["winkel"] = winkel
     #data_by_id[item["id"]]["flavours"].extend(flavours)
