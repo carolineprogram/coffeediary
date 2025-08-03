@@ -33,9 +33,9 @@ for item in koffie.data:
     flavours = [flavour["koffie_flavours"]["flavour"] for flavour in item["koffie_soort_flavours"]]
 
     processed_data.append({
-        "naam": data["naam"],
-        "winkel": data["winkel"],
-        "flavours": ", ".join(data["flavours"])
+        "naam": naam,
+        "winkel": winkel,
+        "flavours": ", ".join(flavours)
         })
     
     #data_by_id[item["id"]]["naam"] = naam
