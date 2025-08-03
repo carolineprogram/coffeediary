@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+from collections import defaultdict
+
 from db import run_query
 
 def get_db_tips():
@@ -22,6 +24,8 @@ st.write(koffie.data)
 
 processed_data = []
 data_by_id = defaultdict(lambda: {"naam": None, "winkel": None, "flavours": []})
+
+st.write(data_by_id)
 
 for item in response.data:
     naam = item["naam"]
