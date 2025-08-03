@@ -12,11 +12,8 @@ st.write(
 )
 
 def get_koffie():
-    #SELECT ks.naam, kw.waargekocht
-    #FROM koffie_soort as ks
-    #LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
-
-    return run_query("joinselect", "koffie_soort", ["naam", "koffie_winkel(waargekocht)"])
+    #return run_query("joinselect", "koffie_soort", ["naam", "koffie_winkel(waargekocht)"])
+    return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)", "koffie_soort_flavours!inner(koffie_flavours(flavour))"])
 
 
 data = pd.DataFrame({
