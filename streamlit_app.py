@@ -7,28 +7,18 @@ def get_db_tips():
     return run_query("select", "HOWTO", ["onderwerp", "databanktips"], order="id")
 
 st.title("☕️Koffie!")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
-)
 
 def get_koffie():
-    #return run_query("joinselect", "koffie_soort", ["naam", "koffie_winkel(waargekocht)"])
-    return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)", "koffie_soort_flavours!inner(koffie_flavours(flavour))"])
+    #SELECT ks.naam, kw.waargekocht, kf.flavour
+    #FROM koffie_soort as ks
+    #LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
+    #LEFT JOIN koffie_soort_flavours kfs ON ks.id = kfs.id_soort LEFT JOIN koffie_flavours kf ON kfs.id_flavour = kf.id
+    ereturn run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)", "koffie_soort_flavours!inner(koffie_flavours(flavour))"])
 
-
-data = pd.DataFrame({
-    'Naam': ['Brazil Catuai Vermelho - filter roast', 
-                'Brazil Cerrado Peaberry - filter roast', 'Charlie'],
-    'Gekocht': ['Onan', 'Onan', 35],
-    'Flavours': ['Hazelnoot, Melkchocolade, Zoete appel, Basilium', 
-                'Geroosterde hazelnoot, Bosbes, Cacao', 78],
-    'Brew': ['Aeropress', 'Aerpress', ''],
-})
-st.table(data)
 
 databanktips = get_db_tips()
 st.table(databanktips.data)
 
 koffie = get_koffie()
-st.write(koffie)
+st.dataframe(koffie.data)
     
