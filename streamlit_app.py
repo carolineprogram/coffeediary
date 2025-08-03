@@ -27,7 +27,7 @@ data_by_id = defaultdict(lambda: {"naam": None, "winkel": None, "flavours": []})
 
 st.write(data_by_id)
 
-for item in response.data:
+for item in koffie.data:
     naam = item["naam"]
     winkel = item["koffie_winkel"]["waargekocht"] if item["koffie_winkel"] else None
     flavours = [flavour["koffie_flavours"]["flavour"] for flavour in item["koffie_soort_flavours"]]
