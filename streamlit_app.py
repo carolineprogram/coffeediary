@@ -21,7 +21,6 @@ def get_koffie():
 koffie = get_koffie()
 
 processed_data = []
-st.write(koffie.data)
 for item in koffie.data:
     naam = item["naam"]
     winkel = item["koffie_winkel"]["waargekocht"] if item["koffie_winkel"] else None
