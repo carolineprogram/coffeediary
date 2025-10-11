@@ -15,7 +15,7 @@ def get_koffie():
     #FROM koffie_soort as ks
     #LEFT JOIN koffie_winkel kw ON ks.id_winkel = kw.id
     #LEFT JOIN koffie_soort_flavours kfs ON ks.id = kfs.id_soort LEFT JOIN koffie_flavours kf ON kfs.id_flavour = kf.id
-    return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)", "koffie_soort_flavours(koffie_flavours(flavour))"])
+    return run_query("select", "koffie_soort", ["naam", "koffie_winkel(waargekocht)", "koffie_soort_flavours(koffie_flavours(flavour))", "koffie_beoordeling(beoordeling)])
 
 
 koffie = get_koffie()
@@ -26,10 +26,12 @@ for item in koffie.data:
     naam = item["naam"]
     winkel = item["koffie_winkel"]["waargekocht"] if item["koffie_winkel"] else None
     flavours = [flavour["koffie_flavours"]["flavour"] for flavour in item["koffie_soort_flavours"]]
+    beoordeling = item["koffie_beoordeling"]["beoordeling" if item["koffie_beoordeling"] else None
 
     processed_data.append({
         "naam": naam,
         "winkel": winkel,
         "flavours": ", ".join(flavours)
+        "beoordeling": beoordeling
         })
 st.table(processed_data)
