@@ -31,7 +31,7 @@ for item in koffie.data:
     processed_data.append({
         "naam": naam,
         "winkel": winkel,
-        "flavours": ", ".join(flavours)
+        "flavours": ", ".join(flavours),
         "beoordeling": beoordeling
         })
 st.table(processed_data)
