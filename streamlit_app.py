@@ -22,6 +22,7 @@ def get_koffie():
 koffie = get_koffie()
 
 processed_data = []
+df_ligging = pd.DataFrame()
 
 for item in koffie.data:
     naam = item["naam"]
@@ -38,13 +39,11 @@ for item in koffie.data:
         "beoordeling": beoordeling
         })
 
-    df_ligging = pd.DataFrame([
-        {
+    df_ligging.append = {
             "lat": latitude,
             "lon": longitude,
             "label": winkel
         }
-    ])
 
 st.table(processed_data)
 
