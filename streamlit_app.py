@@ -55,7 +55,7 @@ st.table(df_ligging)
 view_state = pdk.ViewState(
     latitude=50.8477,
     longitude=4.3572,
-    zoom=12,
+    zoom=4,
     pitch=0
 )
 
@@ -75,7 +75,7 @@ text_layer = pdk.Layer(
     data=df_ligging,
     get_position='[lon, lat]',
     get_text='label',
-    get_size=16,
+    get_size=25,
     get_color=[0, 0, 0, 255],     # Black text
     get_alignment_baseline='"bottom"',
     get_pixel_offset=[0, -10]     # Shift text slightly above the dot
