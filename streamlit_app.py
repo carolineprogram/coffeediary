@@ -42,7 +42,7 @@ for item in koffie.data:
     ligging.append = ({
             "label": winkel,
             "ligging": [latitude,longitude]
-        }-
+        })
 
 st.table(processed_data)
 
