@@ -65,7 +65,7 @@ scatterplot_layer = pdk.Layer(
     data=df_ligging,
     get_position='[lon, lat]',
     get_color=[255, 0, 0, 160],  # Red dots with transparency
-    get_radius=5000,               # Radius in meters
+    get_radius=15000,               # Radius in meters
     pickable=True
 )
 
