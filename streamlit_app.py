@@ -27,11 +27,11 @@ processed_data = []
 for item in koffie.data:
     naam = item["naam"]
     winkel = item["koffie_winkel"]["waargekocht"] if item["koffie_winkel"] else None
-    flavours = [flavour["koffie_flavours"]["flavour"] for flavour in item["koffie_soort_flavours"]]
-    beoordeling = item["koffie_beoordeling"][0]["beoordeling"] if item["koffie_beoordeling"] else None
     latitude = item["koffie_winkel"]["latitude"] if item["koffie_winkel"] else None
     longitude = item["koffie_winkel"]["longitude"] if item["koffie_winkel"] else None
-
+    flavours = [flavour["koffie_flavours"]["flavour"] for flavour in item["koffie_soort_flavours"]]
+    beoordeling = item["koffie_beoordeling"][0]["beoordeling"] if item["koffie_beoordeling"] else None
+    
     processed_data.append({
         "naam": naam,
         "winkel": winkel,
