@@ -65,7 +65,7 @@ scatterplot_layer = pdk.Layer(
     data=df_ligging,
     get_position='[lon, lat]',
     get_color=[255, 0, 0, 160],  # Red dots with transparency
-    get_radius=150,               # Radius in meters
+    get_radius=300,               # Radius in meters
     pickable=True
 )
 
@@ -75,7 +75,7 @@ text_layer = pdk.Layer(
     data=df_ligging,
     get_position='[lon, lat]',
     get_text='label',
-    get_size=150,
+    get_size=20,
     get_color=[0, 0, 0, 255],     # Black text
     get_alignment_baseline='"bottom"',
     get_pixel_offset=[0, -10]     # Shift text slightly above the dot
