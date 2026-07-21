@@ -62,7 +62,7 @@ view_state = pdk.ViewState(
 # 5. Create the layer for the dots
 scatterplot_layer = pdk.Layer(
     'ScatterplotLayer',
-    data=df,
+    data=df_ligging,
     get_position='[lon, lat]',
     get_color=[255, 0, 0, 160],  # Red dots with transparency
     get_radius=150,               # Radius in meters
@@ -89,10 +89,3 @@ st.pydeck_chart(
         tooltip={"text": "{label}"}  # Adds a hover tooltip showing the store name
     )
 )
-df = pd.DataFrame(
-    np.random.randn(100, 2) / 50 + [50.8477, 7.627], # Centered in Brussel
-    columns=['lat', 'lon']
-)
-
-# 2. Draw the map
-st.map(df)
