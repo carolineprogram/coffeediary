@@ -55,7 +55,6 @@ df_ligging = pd.DataFrame([
     }
     for item in ligging
 ])
-st.table(ligging)
 
 # 4. Set the initial map view centered around Brussels
 view_state = pdk.ViewState(
