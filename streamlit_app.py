@@ -34,3 +34,12 @@ for item in koffie.data:
         "beoordeling": beoordeling
         })
 st.table(processed_data)
+
+# 1. Make up some fake dots
+df = pd.DataFrame(
+    np.random.randn(100, 2) / 50 + [50.8477, 7.627], # Centered in Brussel
+    columns=['lat', 'lon']
+)
+
+# 2. Draw the map
+st.map(df)
