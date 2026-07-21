@@ -39,7 +39,7 @@ for item in koffie.data:
         "beoordeling": beoordeling
         })
 
-    ligging.append = ({
+    ligging.append({
             "label": winkel,
             "ligging": [latitude,longitude]
         })
