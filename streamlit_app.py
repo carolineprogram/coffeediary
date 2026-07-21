@@ -22,7 +22,7 @@ def get_koffie():
 koffie = get_koffie()
 
 processed_data = []
-df_ligging = pd.DataFrame()
+ligging = []
 
 for item in koffie.data:
     naam = item["naam"]
@@ -39,16 +39,23 @@ for item in koffie.data:
         "beoordeling": beoordeling
         })
 
-    df_ligging.append = {
-            "lat": latitude,
-            "lon": longitude,
-            "label": winkel
-        }
+    ligging.append = ({
+            "label": winkel,
+            "ligging": [latitude,longitude]
+        }-
 
 st.table(processed_data)
 
-# 3. Display the raw table as requested
-st.table(df_ligging)
+# 3. Convert tot Dataframe and Display the raw table as requested
+df_ligging = pd.DataFrame([
+    {
+        "lat": item["ligging"][0],
+        "lon": item["ligging"][1],
+        "label": item["winkel"]
+    }
+    for item in ligging
+])
+st.table(ligging)
 
 # 4. Set the initial map view centered around Brussels
 view_state = pdk.ViewState(
