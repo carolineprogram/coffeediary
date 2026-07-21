@@ -51,7 +51,7 @@ df_ligging = pd.DataFrame([
     {
         "lat": item["ligging"][0],
         "lon": item["ligging"][1],
-        "label": item["winkel"]
+        "label": item["label"]
     }
     for item in ligging
 ])
